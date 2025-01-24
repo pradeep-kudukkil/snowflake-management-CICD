@@ -23,5 +23,5 @@ steps:
 
 - script: |
     echo "Running the specified Python script: ${{ parameters.python_script }}"
-    python Snowflake/${{ parameters.python_script }}
+    python $(SNOWFLAKE)/${{ parameters.python_script }}
   displayName: Run Python Script
