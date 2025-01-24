@@ -1,15 +1,9 @@
 import snowflake.connector
-import os
 
-# Get the environment variables
-db_username = os.getenv('DB_USERNAME')
-db_password = os.getenv('DB_PASSWORD')
-print(db_username)
-print(db_password)
 # Connect to Snowflake
 connection = snowflake.connector.connect(
-    user=db_username,
-    password=db_password,
+    user='PRADEEPKUDUKKIL',
+    password='Test@7376@',
     account='zsbuhwf-bp99278', 
     database='PRADEEP_TEST',
     schema='MIGRATIONS', 
