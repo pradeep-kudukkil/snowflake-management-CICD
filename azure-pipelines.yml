@@ -6,7 +6,7 @@ pool:
 parameters:
   - name: python_script
     type: string
-    default: 'Snowflake/employees-table.py'  # Default script name
+    default: 'employees-table.py'  # Default script name
     values:
       - employees-table.py
       - employees-table2.py
@@ -22,6 +22,6 @@ steps:
   displayName: Install Python Dependencies
 
 - script: |
-    echo "Running the specified Python script: $(python_script)"
-    python Snowflake/$(python_script)
+    echo "Running the specified Python script: ${{ parameters.python_script }}"
+    python Snowflake/${{ parameters.python_script }}
   displayName: Run Python Script
