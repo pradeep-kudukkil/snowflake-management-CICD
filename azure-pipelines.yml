@@ -12,8 +12,8 @@ parameters:
       - delete-employee.py
 
 variables:
-  db_username: $(DB_USERNAME)  
-  db_password: $(DB_PASSWORD) 
+  DB_USERNAME: $(DB_USERNAME)
+  DB_PASSWORD: $(DB_PASSWORD) 
 
 steps:
 - task: UsePythonVersion@0
