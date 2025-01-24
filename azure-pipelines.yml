@@ -4,6 +4,14 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+parameters:
+  - name: python_script
+    type: string
+    default: 'Snowflake/employees-table.py'  # Default script name
+    values:
+      - Snowflake/employees-table.py
+      - Snowflake/employees-table2.py
+
 steps:
 - task: UsePythonVersion@0
   inputs:
@@ -15,5 +23,6 @@ steps:
   displayName: Install Python Dependencies
 
 - script: |
-    python Snowflake/employees-table.py
-  displayName: Run Snowflake Script
+    echo "Running the specified Python script: $(python_script)"
+    python $(python_script)
+  displayName: Run Python Script
