@@ -11,10 +11,6 @@ parameters:
       - employees-table.py
       - delete-employee.py
 
-variables:
-  DB_USERNAME: $(DB_USERNAME)
-  DB_PASSWORD: $(DB_PASSWORD) 
-
 steps:
 - task: UsePythonVersion@0
   inputs:
@@ -27,16 +23,9 @@ steps:
 
 
 - script: |
-    echo "DB_USERNAME: $(DB_USERNAME)"
-    echo "DB_PASSWORD: $(DB_PASSWORD)" 
-
-- script: |
     echo "Running the specified Python script: ${{ parameters.python_script }}"
     python Snowflake/${{ parameters.python_script }}
   displayName: Run Python Script
-  env:
-    DB_USERNAME: $(DB_USERNAME)
-    DB_PASSWORD: $(DB_PASSWORD)
 
 
 
