@@ -25,6 +25,12 @@ steps:
     pip install snowflake-connector-python
   displayName: Install Python Dependencies
 
+
+- script: |
+    echo "Printing environment variables"
+    printenv
+  displayName: 'Print Environment Variables'
+
 - script: |
     echo "Running the specified Python script: ${{ parameters.python_script }}"
     python Snowflake/${{ parameters.python_script }}
@@ -34,7 +40,4 @@ steps:
     DB_PASSWORD: $(db_password)
 
 
-- script: |
-    echo "Printing environment variables"
-    printenv
-  displayName: 'Print Environment Variables'
+
