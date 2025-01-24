@@ -1,14 +1,19 @@
 import snowflake.connector
+import os
+
+# Get the environment variables
+db_username = os.getenv('DB_USERNAME')
+db_password = os.getenv('DB_PASSWORD')
 
 # Connect to Snowflake
 connection = snowflake.connector.connect(
-    user='PRADEEPKUDUKKIL',
-    password='Test@7376@',
-    account='zsbuhwf-bp99278',  # e.g., xy12345.us-east-1
+    user=db_username,
+    password=db_password,
+    account='zsbuhwf-bp99278', 
     database='PRADEEP_TEST',
-    schema='MIGRATIONS',  # Optional
-    warehouse='COMPUTE_WH',  # Optional
-    role='ACCOUNTADMIN'  # Optional
+    schema='MIGRATIONS', 
+    warehouse='COMPUTE_WH', 
+    role='ACCOUNTADMIN' 
 )
 
 # Create a cursor object
