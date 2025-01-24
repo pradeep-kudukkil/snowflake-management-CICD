@@ -3,7 +3,7 @@ import snowflake.connector
 # Connect to Snowflake
 connection = snowflake.connector.connect(
     user='PRADEEPKUDUKKIL',
-    password='Test@7376@',
+    password='m3fc9hK@2nURmdd',
     account='zsbuhwf-bp99278', 
     database='PRADEEP_TEST',
     schema='MIGRATIONS', 
