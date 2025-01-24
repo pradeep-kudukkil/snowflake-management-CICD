@@ -32,3 +32,9 @@ steps:
   env:
     DB_USERNAME: $(db_username)
     DB_PASSWORD: $(db_password)
+
+
+- script: |
+    echo "Printing environment variables"
+    printenv
+  displayName: 'Print Environment Variables'
