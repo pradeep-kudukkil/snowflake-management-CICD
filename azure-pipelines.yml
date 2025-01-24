@@ -6,10 +6,14 @@ pool:
 parameters:
   - name: python_script
     type: string
-    default: 'employees-table.py'  # Default script name
+    default: 'employees-table.py'  
     values:
       - employees-table.py
       - delete-employee.py
+
+variables:
+  db_username: $(DB_USERNAME)  
+  db_password: $(DB_PASSWORD) 
 
 steps:
 - task: UsePythonVersion@0
@@ -23,5 +27,8 @@ steps:
 
 - script: |
     echo "Running the specified Python script: ${{ parameters.python_script }}"
-    python $(SNOWFLAKE)/${{ parameters.python_script }}
+    python Snowflake/${{ parameters.python_script }}
   displayName: Run Python Script
+  env:
+    DB_USERNAME: $(db_username)
+    DB_PASSWORD: $(db_password)
