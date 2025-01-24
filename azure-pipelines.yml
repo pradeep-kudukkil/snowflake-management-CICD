@@ -9,7 +9,7 @@ parameters:
     default: 'employees-table.py'  # Default script name
     values:
       - employees-table.py
-      - employees-table2.py
+      - delete-employee.py
 
 steps:
 - task: UsePythonVersion@0
