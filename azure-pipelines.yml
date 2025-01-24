@@ -36,8 +36,8 @@ steps:
     python Snowflake/${{ parameters.python_script }}
   displayName: Run Python Script
   env:
-    DB_USERNAME: $(db_username)
-    DB_PASSWORD: $(db_password)
+    DB_USERNAME: $(DB_USERNAME)
+    DB_PASSWORD: $(DB_PASSWORD)
 
 
 
